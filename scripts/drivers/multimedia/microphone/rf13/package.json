@@ -1,0 +1,11 @@
+{
+  "name": "rf13",
+  "version": "0.0.1",
+  "description": "this is rf13 high sensitivity microphone module driver",
+  "main": " ",
+  "author": "jweih.hjw",
+  "license": "ISC",
+  "platform":"ESP32",
+  "config":"driver.json",
+  "test":"test/index_test.js"
+}

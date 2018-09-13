@@ -1,0 +1,11 @@
+{
+  "name": "tube595",
+  "version": "0.0.1",
+  "description": "this is tube595 digitron driver",
+  "main": " ",
+  "author": "jweih.hjw",
+  "license": "ISC",
+  "platform":"ESP32",
+  "config":"driver.json",
+  "test":"test/index_test.js"
+}

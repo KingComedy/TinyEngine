@@ -1,0 +1,11 @@
+{
+  "name": "spk",
+  "version": "0.0.1",
+  "description": "this is speaker driver for ESP32",
+  "main": " ",
+  "author": "jweih.hjw",
+  "license": "ISC",
+  "platform":"ESP32",
+  "config":"driver.json",
+  "test":"test/index_test.js"
+}

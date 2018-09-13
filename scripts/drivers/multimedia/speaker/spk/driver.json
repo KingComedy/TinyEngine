@@ -1,0 +1,7 @@
+{
+  "spk.dac1":{
+    "type":"DAC",
+    "port":1,
+    "voltage":255
+  }
+}
