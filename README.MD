@@ -48,14 +48,16 @@ TinyEngine 适用于IoT设备端的场景应用开发，设备开发，驱动模
 ```
 
 #### docs:
-	包含 TinyEngine 开发指南，编程 API 接口文档，驱动模块使用说明
+	包含 TinyEngine 开发指南，编程 API 接口文档，驱动模块使用说明。
 #### firmware
-	TinyEngine官方编译的TinyEngine固件，固件包含：TinyEngine JSE，RTOS，Bootloader，TinyEngine Framework
+	TinyEngine官方编译的TinyEngine固件，固件包含：TinyEngine JSE，RTOS，Bootloader，TinyEngine Framework。
 #### scripts
-	所有用Javascript 编写的脚本，包括 demos 目录下的 Javascript 应用程序，Drivers 目录下的用Javascript 编写的驱动程序，Modules 用 Javascript 编写的软件模块如cloud-client 
+	所有用Javascript 编写的脚本，包括 demos 目录下的 Javascript 应用程序，Drivers 目录下的用Javascript 编写  
+    的驱动程序，Modules 用 Javascript 编写的软件模块如cloud-client。 
 #### TinyEngine
-	整个TinyEngine框架的实现代码，包含：TinyEngine 的 JSE，编程框架，Native modules，该代码正在整理中，安全扫描，预计12月份可以完全开放
+	整个TinyEngine框架的实现代码，包含：TinyEngine 的 JSE，编程框架，Native modules，该代码正在整理中，安全  
+    扫描，预计12月份可以完全开放。
 #### tools
-	开发调试工具，包括本地和云端的 WebIDE，命令行工具 be-cli，设备调试的 DeviceAgent，虚拟设备等	
+	开发调试工具，包括本地和云端的 WebIDE，命令行工具 be-cli，设备调试的 DeviceAgent，虚拟设备等。	
 	
 
