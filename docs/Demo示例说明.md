@@ -107,7 +107,7 @@
 
       * 在自定义功能中新增一个属性，名为LightStatus，以跟demo程序对应上。
 
-      ![ld-new-fun2](https://github.com/aliyun/TinyEngine/tree/master/docs/graph/ld-demo-png/ld-new-fun2.jpg)
+      ![ld-new-fun2](./graph/ld-demo-png/ld-new-fun2.jpg)
 
       
 
