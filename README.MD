@@ -56,7 +56,7 @@ TinyEngine 适用于IoT设备端的场景应用开发，设备开发，驱动模
     的驱动程序，Modules 用 Javascript 编写的软件模块如cloud-client。 
 #### TinyEngine
 	整个TinyEngine框架的实现代码，包含：TinyEngine 的 JSE，编程框架，Native modules，该代码正在整理中，安全  
-    扫描，即将开放。
+    扫描，即将开源。
 #### tools
 	开发调试工具，包括本地和云端的 WebIDE，命令行工具 be-cli，设备调试的 DeviceAgent，虚拟设备等。	
 	
