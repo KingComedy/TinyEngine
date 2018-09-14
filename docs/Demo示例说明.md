@@ -85,7 +85,7 @@
 
   * 该demo需要连接云端，所以需要在云端建立对应的设备模型和设备。方法如下：
 
-    * 创建产品
+    * 新增一款产品
 
     ![ld-create-product](./graph/ld-demo-png/ld-create-product.jpg)
 
