@@ -83,80 +83,53 @@
 
   * 该应用即可以在实际的嵌入式硬件上运行，也可以在PC模拟器上运行。**运行前需要保证设备/PC是联网的**。
 
-  * 该demo需要连接云端，所以需要在云端建立对应的设备模型和设备。方法如下：
-
-    * 新增一款产品
-
-    ![ld-create-product](./graph/ld-demo-png/ld-create-product.jpg)
+  * 该demo需要连接云端，所以需要在云端建立对应的设备模型和设备。具体步骤请参考下面的 《linkdevelop上新增设备》。
 
     
 
-   
-      ![ld-create-product]( ./graph/ld-demo-png/ld-create-product.jpg)
+  ## linkdevelop上增加设备
 
-     
+* 新增一款产品
 
-    * 填写产品详细信息
+  ![ld-create-product](./graph/ld-demo-png/ld-create-product.jpg)
 
-    ![ld-create-product2](graph/ld-demo-png/ld-create-product2.jpg)
-      ![ld-create-product2](./graph/ld-demo-png/ld-create-product2.jpg)
+* 填写产品详细信息.
 
-    * 在产品模型里面，自定义功能，点击 自定义功能->新增。
+  ![ld-create-product2](graph/ld-demo-png/ld-create-product2.jpg)
 
-    ![ld-new-fun](graph/ld-demo-png/ld-new-fun.jpg)
+* 在产品模型里面，自定义功能，点击 自定义功能->新增。
 
-      ![ld-new-fun](./graph/ld-demo-png/ld-new-fun.jpg)
+  ![ld-new-fun](graph/ld-demo-png/ld-new-fun.jpg)
 
-    * 在自定义功能中新增一个属性，名为LightStatus，以跟demo程序对应上。
+* 在自定义功能中新增一个属性，名为LightStatus，以跟linkdevlop-demo程序对应上。
 
-    ![ld-new-fun2](./graph/ld-demo-png/ld-new-fun2.jpg)
+  ![ld-new-fun2](./graph/ld-demo-png/ld-new-fun2.jpg)
 
-      ![ld-new-fun2](./graph/ld-demo-png/ld-new-fun2.jpg)
+* 点击设备开发，新增设备。添加一个测试设备，DeviceName可随意取。
 
-    * 点击设备开发，新增设备。添加一个测试设备，DeviceName可随意取。
+  ![ld-create-device](graph/ld-demo-png/ld-create-device.jpg)
 
-    ![ld-create-device](graph/ld-demo-png/ld-create-device.jpg)
+* 添加设备成功后，将生成的设备三要素 拷贝到 linkdevelop-demo的index.js中。
 
-      ![ld-create-device](./graph/ld-demo-png/ld-create-device.jpg)
+*  点击设备连接，并运行。运行成功，可以在Console控制台提示连接成功的log。
 
+* 设备连接成功后，可以在LD平台的设备列表中看到在线。
 
-    * 添加设备成功后，**将生成的设备三要素 拷贝到 linkdevelop-demo的index.js中**。
+![ld-online](graph/ld-demo-png/ld-online.jpg)
 
-    
-    * 点击设备连接，并运行。运行成功，可以在Console控制台提示连接成功的log。
+* 点击在线设备的调试。按如下方式下发指令到客户端。
 
-      ![ld-3-key](./graph/ld-demo-png/ld-3-key.jpg)
-
-    
-
-    * 设备连接成功后，可以在LD平台的设备列表中看到在线。
-
-    ![ld-online](graph/ld-demo-png/ld-online.jpg)
-      ![ld-ide-run](./graph/ld-demo-png/ld-ide-run.jpg)
+  ![ld-server-set](graph/ld-demo-png/ld-server-set.jpg)
 
 
-    
+​      
 
-    * 点击在线设备的调试。按如下方式下发指令到客户端。
+* 发送成功后，Console控制台会有收到消息的打印，并会回复数字1到云端。
 
-      ![ld-server-set](graph/ld-demo-png/ld-server-set.jpg)
+  ![ld-server-get](graph/ld-demo-png/ld-server-get.jpg)
 
-      
 
-    * 发送成功后，Console控制台会有收到消息的打印，并会回复数字1到云端。
-
-      ![ld-server-get](graph/ld-demo-png/ld-server-get.jpg)
-
-      ![ld-online](./graph/ld-demo-png/ld-online.jpg)
-
-      
-
-      * 点击在线设备的调试。按如下方式下发指令到客户端。
-
-        ![ld-server-set](./graph/ld-demo-png/ld-server-set.jpg)
-
-      * 发送成功后，Console控制台会有收到消息的打印，并会回复数字1到云端。
-
-        ![ld-server-get](./graph/ld-demo-png/ld-server-get.jpg)
+​      
 
   
+
