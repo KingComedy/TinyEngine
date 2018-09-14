@@ -1,6 +1,6 @@
 # Demo示例说明
 
-这里介绍在LinkDevelop页面展示的三个代表性Demo，分别为 demo-helloworld, demo-rgbled, demo-linkdevelop。
+这里介绍在LinkDevelop页面展示的三个默认Demo，分别为 demo-helloworld, demo-rgbled, demo-linkdevelop，进入嵌入式应用工作台即可查看。
 
 通过这三个demo的使用，使开发者能快速上手嵌入式JavaScript开发。
 
@@ -12,7 +12,7 @@
 
 * 如何使用：
 
-  * 进入嵌入式应用工作台，点击 demo-helloworld即可打开该demo项目。
+  * 进入嵌入式应用工作台，创建一个新项目，默认就是helloworld示例。
 
   * 该应用可以运行在模拟器上面，即不用真实的嵌入式硬件设备。
 
@@ -87,60 +87,56 @@
 
     * 创建产品
 
-      ![ld-create-product](https://github.com/aliyun/TinyEngine/tree/master/docs/graph/ld-demo-png/ld-create-product.jpg)
+    ![ld-create-product](./graph/ld-demo-png/ld-create-product.jpg)
+
+    
+
+    
+
+    * 填写产品详细信息
+
+    ![ld-create-product2](graph/ld-demo-png/ld-create-product2.jpg)
+
+    * 在产品模型里面，自定义功能，点击 自定义功能->新增。
+
+    ![ld-new-fun](graph/ld-demo-png/ld-new-fun.jpg)
+
+    
+
+    * 在自定义功能中新增一个属性，名为LightStatus，以跟demo程序对应上。
+
+    ![ld-new-fun2](./graph/ld-demo-png/ld-new-fun2.jpg)
+
+    
+
+    * 点击设备开发，新增设备。添加一个测试设备，DeviceName可随意取。
+
+    ![ld-create-device](graph/ld-demo-png/ld-create-device.jpg)
+
+    
+
+    * 添加设备成功后，**将生成的设备三要素 拷贝到 linkdevelop-demo的index.js中**。
+
+    
+
+    * 点击设备连接，并运行。运行成功，可以在Console控制台提示连接成功的log。
+
+    
+
+    * 设备连接成功后，可以在LD平台的设备列表中看到在线。
+
+    ![ld-online](graph/ld-demo-png/ld-online.jpg)
+
+    
+
+    * 点击在线设备的调试。按如下方式下发指令到客户端。
+
+      ![ld-server-set](graph/ld-demo-png/ld-server-set.jpg)
 
       
 
-      
+    * 发送成功后，Console控制台会有收到消息的打印，并会回复数字1到云端。
 
-      * 填写产品详细信息
-
-      ![ld-create-product2](https://github.com/aliyun/TinyEngine/tree/master/docs/graph/ld-demo-png/ld-create-product2.jpg)
-
-      
-
-      * 在产品模型里面，自定义功能，点击 自定义功能->新增。
-
-      ![ld-new-fun](https://github.com/aliyun/TinyEngine/tree/master/docs/graph/ld-demo-png/ld-new-fun.jpg)
-
-      
-
-      * 在自定义功能中新增一个属性，名为LightStatus，以跟demo程序对应上。
-
-      ![ld-new-fun2](./graph/ld-demo-png/ld-new-fun2.jpg)
-
-      
-
-      * 点击设备开发，新增设备。添加一个测试设备，DeviceName可随意取。
-
-      ![ld-create-device](https://github.com/aliyun/TinyEngine/tree/master/docs/graph/ld-demo-png/ld-create-device.jpg)
-
-      
-
-      * 添加设备成功后，将生成的设备三要素 拷贝到 linkdevelop-demo的index.js中。
-
-      ![ld-3-key](https://github.com/aliyun/TinyEngine/tree/master/docs/graph/ld-demo-png/ld-3-key.jpg)
-
-      
-
-      * 点击设备连接，并运行。运行成功，可以在Console控制台提示连接成功的log。
-
-      ![ld-ide-run](https://github.com/aliyun/TinyEngine/tree/master/docs/graph/ld-demo-png/ld-ide-run.jpg)
-
-      
-
-      * 设备连接成功后，可以在LD平台的设备列表中看到在线。
-
-      ![ld-online](https://github.com/aliyun/TinyEngine/tree/master/docs/graph/ld-demo-png/ld-online.jpg)
-
-      
-
-      * 点击在线设备的调试。按如下方式下发指令到客户端。
-
-        ![ld-server-set](https://github.com/aliyun/TinyEngine/tree/master/docs/graph/ld-demo-png/ld-server-set.jpg)
-
-      * 发送成功后，Console控制台会有收到消息的打印，并会回复数字1到云端。
-
-        ![ld-server-get](https://github.com/aliyun/TinyEngine/tree/master/docs/graph/ld-demo-png/ld-server-get.jpg)
+      ![ld-server-get](graph/ld-demo-png/ld-server-get.jpg)
 
   
