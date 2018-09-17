@@ -44,11 +44,17 @@
 
 
 
-* 为什么要安装nodejs及be-cli？
+* 使用npm安装be-cli时速度很慢，经常卡住 导致安装be-cli失败怎么解决？
 
-  答：nodejs是跨平台的，可以实现在多平台上与嵌入式硬件通信。
+  答：更换npm的源为淘宝源。然后使用`cnpm install be-cli -g`安装。
 
-  be-cli是一个与嵌入式应用控制台通信的Agent。
+  参考方法：https://npm.taobao.org/
 
+  
 
+* 如何设置设备的WIFI？
+
+  答：进入嵌入式JS开发控制台，打开一个项目，连接设备，点击左侧图标栏的“设备管理”，输入wifi的ssid和密码，点击设置即可。如下图：
+
+  ![image-20180915170236732](graph/wifi_settings.jpg)
 
