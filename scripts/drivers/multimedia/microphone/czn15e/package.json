@@ -1,8 +1,8 @@
 {
   "name": "czn15e",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this is czn15e sound sensor driver",
-  "main": " ",
+  "main": "src/index.js",
   "author": "jweih.hjw",
   "license": "ISC",
   "platform":"ESP32",

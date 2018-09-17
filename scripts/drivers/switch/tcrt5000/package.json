@@ -1,8 +1,8 @@
 {
   "name": "tcrt5000",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this is tcrt5000 driver for Esp32",
-  "main": " ",
+  "main": "src/index.js",
   "author": "",
   "license": "ISC",
   "platform":"ESP32",

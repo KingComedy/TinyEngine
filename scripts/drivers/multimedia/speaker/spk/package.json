@@ -1,8 +1,8 @@
 {
   "name": "spk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this is speaker driver for ESP32",
-  "main": " ",
+  "main": "src/index.js",
   "author": "jweih.hjw",
   "license": "ISC",
   "platform":"ESP32",

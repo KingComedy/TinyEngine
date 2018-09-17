@@ -1,8 +1,8 @@
 {
   "name": "ADXL345",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this is ADXL345 acceleration sensor driver",
-  "main": " ",
+  "main": "src/index.js",
   "author": "Gavin Guo",
   "license": "ISC",
   "platform":"ESP32",

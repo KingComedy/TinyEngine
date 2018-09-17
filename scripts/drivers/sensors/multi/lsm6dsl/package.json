@@ -1,8 +1,8 @@
 {
   "name": "lsm6dsl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this is lsm6dsl gyroscope & acceleration sensor driver",
-  "main": " ",
+  "main": "src/index.js",
   "author": "Gavin Guo",
   "license": "ISC",
   "platform":"ESP32",
