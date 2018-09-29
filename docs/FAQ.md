@@ -16,6 +16,28 @@
 
 
 
+* 如果出现web JS控制台即浏览器与设备连接不上，如何分析处理？
+
+  答：查看设备的端口是否已经枚举出来，be launch是否正常运行，浏览器刷新再重试。
+
+
+
+* MAC电脑上找不到ESP32的usb端口？
+
+  答：这可能是MAC上未安装usb转串口的驱动，或者在安装串口驱动时MAC由于权限原因阻止了驱动的载入。
+
+  ESP32安装串口驱动方法：
+
+  - Windwos和MAC：点击该[地址]( https://cn.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)并下载相应系统对应驱动并安装。
+
+  - Ubuntu：无需安装驱动，默认自带。
+
+  - 注意：
+
+    MAC上安装串口驱动时默认会被阻止，需要打开 系统偏好设置->安全与隐私->查看是否有类似“silabs.com”的应用被阻止的情况，如有需要点击允许放行。
+
+
+
 * 哪些应用或功能可以在模拟器上调试？
 
   答：TinyEngine模拟器运行在PC上，所以与硬件控制无关的功能都可以在模拟器上测试，如deviceShadow上云模块，net，http等。
@@ -54,7 +76,28 @@
 
 * 如何设置设备的WIFI？
 
-  答：进入嵌入式JS开发控制台，打开一个项目，连接设备，点击左侧图标栏的“设备管理”，输入wifi的ssid和密码，点击设置即可。如下图：
+  答：
+
+  方法一：进入嵌入式JS开发控制台，打开一个项目，连接设备，点击左侧图标栏的“设备管理”，输入wifi的ssid和密码，点击设置即可。如下图：
 
   ![image-20180915170236732](graph/wifi_settings.jpg)
 
+
+
+​      方法二：使用be 的命令行工具：  be setWiFi <target> <ssid> <password> ,
+
+  说明此处target是串口节点如/dev/ttyUSB0，windows上可能是COMx，mac上可能是dev/tty.SLAB_USBtoUART
+
+​    方法三： 参考TinyEngine JS API文档，使用WIFI.connect(ssid,passwd,function(){});方式连接指定wifi。
+
+
+
+
+
+
+
+
+
+
+
+ 

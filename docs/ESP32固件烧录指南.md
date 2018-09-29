@@ -23,6 +23,10 @@ ESP32使用USB转串口进行烧录，所以需要安装串口驱动：
 
 * Ubuntu：无需安装驱动，默认自带。
 
+* 注意：
+
+  MAC上安装串口驱动时默认会被阻止，需要打开 系统偏好设置->安全与隐私->查看是否有类似“silabs.com”的应用被阻止的情况，如有需要点击允许放行。
+
   
 
 ---
@@ -91,6 +95,8 @@ ota_data_initial： fota升级文件
 
 esp32devkitc-xxx.bin： TinyEngine kernel固件。
 
+spiffs.bin:  默认的JS data镜像
+
 
 
 `说明：请根据待烧录固件的实际名称将如下命令的esp32devkitc-xxx.bin替换成firmware下的真实文件名`
@@ -100,7 +106,7 @@ esp32devkitc-xxx.bin： TinyEngine kernel固件。
 **在终端输入如下命令开始烧写**：
 
 ```
-esptool.py --chip esp32 --port /dev/tty.SLAB_USBtoUART --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0xd000 ota_data_initial.bin 0x1000 bootloader.bin 0x10000 esp32devkitc-xxx.bin 0x8000 custom_partitions.bin
+esptool.py --chip esp32 --port /dev/tty.SLAB_USBtoUART --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0xd000 ota_data_initial.bin 0x1000 bootloader.bin 0x10000 esp32devkitc-xxx.bin 0x8000 custom_partitions.bin 0x315000 spiffs.bin
 ```
 
 
@@ -184,6 +190,8 @@ ota_data_initial： fota升级文件
 
 esp32devkitc-xxx.bin： TinyEngine kernel固件。
 
+spiffs.bin: 默认的JS data镜像
+
 `说明：请根据待烧录固件的实际名称将如下命令的esp32devkitc-xxx.bin替换成firmware下的真实文件名`
 
 
@@ -191,7 +199,7 @@ esp32devkitc-xxx.bin： TinyEngine kernel固件。
 **在终端输入如下命令开始烧写**：
 
 ```
-esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0xd000 ota_data_initial.bin 0x1000 bootloader.bin 0x10000 esp32devkitc-xxx.bin 0x8000 custom_partitions.bin
+esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0xd000 ota_data_initial.bin 0x1000 bootloader.bin 0x10000 esp32devkitc-xxx.bin 0x8000 custom_partitions.bin 0x315000 spiffs.bin
 ```
 
 
@@ -299,7 +307,7 @@ esp32devkitc-xxx.bin： TinyEngine kernel固件。
 * **在终端输入如下命令开始烧写**：
 
 ```
-esptool.py --chip esp32 --port COM3 --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0xd000 ota_data_initial.bin 0x1000 bootloader.bin 0x10000 esp32devkitc-xxx.bin 0x8000 custom_partitions.bin
+esptool.py --chip esp32 --port COM3 --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0xd000 ota_data_initial.bin 0x1000 bootloader.bin 0x10000 esp32devkitc-xxx.bin 0x8000 custom_partitions.bin 0x315000 spiffs.bin
 ```
 
 

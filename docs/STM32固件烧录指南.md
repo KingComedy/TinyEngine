@@ -80,6 +80,7 @@ st-flash工具github文档地址：https://github.com/texane/stlink
 
 ```
 ./st-flash --reset write developerkit-xxx.bin 0x8000000
+./st-flash --reset write spiffs.bin 0x080C0000
 ```
 
 
@@ -92,6 +93,7 @@ st-flash工具github文档地址：https://github.com/texane/stlink
 
 ```
 ./st-flash --reset write developerkit-xxx.bin 0x8000000
+./st-flash --reset write spiffs.bin 0x080C0000
 ```
 
 #### Windows系统烧录
@@ -132,7 +134,9 @@ st-flash工具github文档地址：https://github.com/texane/stlink
 
 
 
+* 附加步骤：烧录spiffs js 分区镜像（可选）
 
+  如需烧录默认的helloworld TinyEngine JS程序或者想格式化JS文件分区，请按照上述烧录developerkit-xxx.bin的一样的方法，烧录**spiffs.bin镜像到0x80C0000这个地址**，该spiffs.bin是一个默认的js data镜像，使用了helloworld默认TinyEngine JS程序。
 
  
 
