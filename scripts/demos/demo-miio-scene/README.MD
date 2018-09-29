@@ -24,11 +24,24 @@ TinyEngine支持小米设备接入，在TinyEngine的Native层，实现了小米
 
   ![img](../../../docs/graph/miio设备组网图.jpg)
 
-- 下一步，我们需要获取小米网关、人体传感器、小米灯泡的设备ID(deviceID)，设备身份标识(token)，这里的token是小米miio通信协议中用于识别小米设备的身份标识，由于小米官方并不提供开放协议获取token，目前大家常用的做法是通过miio npm工具和查看android手机数据库的方法。具体方法请参考下面的章节《如何获取小米设备的deviceID和token》。
+  - 下一步，我们需要获取小米网关、人体传感器、小米灯泡的设备ID(deviceID)，设备身份标识(token)，这里的token是小米miio通信协议中用于识别小米设备的身份标识，由于小米官方并不提供开放协议获取token，目前大家常用的做法是通过miio npm工具和查看android手机数据库的方法。具体方法请参考下面的章节《如何获取小米设备的deviceID和token》。
 
-- 获取到上述这些deviceID和token后，修改index.js程序中的对应设备的ID(deviceID)和设备身份标识(token)进行相应的场景调试。
+  - 获取到上述这些deviceID和token后，修改index.js程序中的对应设备的ID(deviceID)和设备身份标识(token)进行相应的场景调试。
 
-**注意**：本例程中的控制接口和参数，如 灯的控制接口set_power，人体传感器的移动事件状态motion都是针对某一款小米设备的，对于新接入的小米设备，需要参考下面的《如何查看小米设备的miio接口和属性》。
+  ```
+  // miio 为 Natvie Modules，按照小米设备接入协议实现的扩展对象
+  // 如下设备的Did，token需要填入真实设备的信息，具体获取方法请参考README
+  var lightDevice;
+  var xiaoMiMotionSentorDid = 'xxx';  //小米人体感应器的deviceID
+  var xiaoMiGatewayDid = xxx;   //小米网关的deviceID
+  var xiaoMiLightDid = xxx;   //小米WIFI灯的deviceID
+  var xiaoMiGatewayToken = "xxx";  //小米网关的Token
+  var xiaoMiLightToken = "xxx";  //小米WIFI灯的Token
+  var WiFiSSID = 'xxx'; //小米设备连接的WiFi热点名称
+  var WiFiPasswd = 'xxxx'; //小米设备连接的WiFi热点密码
+  ```
+
+  **注意**：本例程中的控制接口和参数，如 灯的控制接口set_power，人体传感器的移动事件状态motion都是针对某一款小米设备的，对于新接入的小米设备，需要参考下面的《如何查看小米设备的miio接口和属性》。
 
 ## 认识小米设备
 
@@ -58,7 +71,36 @@ TinyEngine支持小米设备接入，在TinyEngine的Native层，实现了小米
 
 [com.xiaomi.smarthome 2.apk.zip](https://yuque.antfin-inc.com/attachments/lark/0/2018/zip/89215/1538134545968-d26c929d-5c67-48f1-9a50-57931f027620.zip)(17.39 MB)
 
-登录米家app，然后通过米家app添加网关及小米设备。然后查询`/data/data/com.xiaomi.smarthome/databases/miio2.db`数据库，比如：`adb shell "sqlite3 /data/data/com.xiaomi.smarthome/databases/miio2.db 'select  name,  token, localIP, model, ownerName from devicerecord'"`；其他一些方法请在网上搜索下。
+登录米家app，然后通过米家app添加网关及小米设备，**并进行相应的触发操作**，如触发人体感应，控制开关灯等。然后查询`/data/data/com.xiaomi.smarthome/databases/miio2.db`数据库。然后使用可视化的sqlite3工具打开这个数据库找到对应设备的信息。
+
+例如：在我的mac电脑的网易MuMu模拟器上的操作步骤如下：
+
+```
+@MrWu :~$     adb devices
+List of devices attached
+127.0.0.1:5555	offline
+emulator-5554	device
+
+@MrWu :~$     adb -s emulator-5554 pull /data/data/com.xiaomi.smarthome/databases/miio2.db .
+/data/data/com.xiaomi.smarthome/databases/miio2.db: 1 file pulled. 3.5 MB/s (20480 bytes in 0.006s)
+```
+
+然后使用mac上的sqlite工具（SQliteStdio免费版）打开该数据库（或者使用sqlite命令  `sqlite3 miio2.db 'select did,name,localIP,token from devicerecord' `）；
+
+如下可以看出，小米设备的各种信息在数据库中（这是使用图形化sqlite工具打开的）
+
+<img src="../../../docs/graph/sqlite_miio.png" width="800" hegiht="300" align=center />
+
+然后从数据库表中找到对应设备的name, token、did、IP、method、event等信息。
+
+
+
+## 如何查看小米设备的miio接口和属性？
+
+- 一种方法是参考home-assistant和miio源码；
+- 另外一种方法（同如何获取小米设备token的方式二）：通过安装一个android虚拟机，在android虚拟机上安装一个米家app，然后在米家app上对设备进行操作，同时抓取操作包，再通过miio工具解包，详细请[参看](https://github.com/aholstenson/miio/blob/master/docs/protocol.md)。
+
+ 
 
 ## 如何查看小米设备的miio接口和属性？
 
